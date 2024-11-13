@@ -15,7 +15,7 @@ function GetHourlyWidget() {
                     오늘의 시간대별 날씨를 조회하고 있습니다.
                 </CardDescription>
             </CardHeader>
-            <CardContent className="w-full flex items-center gap-4 ">
+            <CardContent className="w-full flex items-center gap-4 overflow-x-scroll">
                 <Card className="w-24 min-w-24 h-fit flex flex-col items-center py-[6px] gap-1 bg-neutral-50">
                     <span className="text-sm">오후 1시</span>
                     <img src="src/assets/icons/1030n.svg" alt="" />
