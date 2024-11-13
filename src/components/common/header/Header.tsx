@@ -21,4 +21,3 @@ function Header() {
 }
 
 export {Header};
-//디폴트는이름없이내보냄
