@@ -14,3 +14,7 @@ export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent,}
 export { Input } from "./ui/input";
 export { Separator } from "./ui/separator";
 export { SearchBar }from "./ui/search-bar";
+
+/** TEST CODE */
+export { GetSunriseAndSunset } from "./home/GetSunriseAndSunset";
+export { GetWavesWidget } from "./home/GetWavesWidget";
