@@ -16,7 +16,7 @@ function HomePage() {
         <div className="page">
             <div className="page__container">
                 <Header />
-                <div className="w-full h-full flex flex-col items-center justify-start py-6 px-6 bg-black">
+                <div className="w-full h-full flex flex-col items-center justify-start px-6 bg-black">
                     {/* 상단 3개의 위젯 */}
                     <div className="w-full flex items-center gap-6">
                         <GetTodayWidget />
@@ -24,7 +24,7 @@ function HomePage() {
                         <GetKakaoMapWidget />
                     </div>
                     {/* 하단 2개의 위젯 */}
-                    <div className="w-full flex items-center gap-6">
+                    <div className="w-full flex items-center py-6 gap-6">
                         <GetTodayHighlightsWidget />
                         <Card className="w-1/4">
                             <CardHeader>

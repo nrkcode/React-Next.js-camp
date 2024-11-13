@@ -8,7 +8,7 @@ import {
 
 function GetHourlyWidget() {
     return (
-        <Card className="flex-1 max-w-[calc(50%-48px)]">
+        <Card className="flex-1 max-w-[calc(50%-48px)] h-full">
             <CardHeader>
                 <CardTitle className="text-xl">Hourly</CardTitle>
                 <CardDescription>
