@@ -13,7 +13,7 @@ function GetTodayWidget() {
             <div className="w-full h-full flex flex-col">
                 <div className="flex items-center gap-4">
                     {/* 날씨 아이콘 */}
-                    <img src="" alt="weather-icon" />
+                    <img src="src/assets/icons/1000d.svg" alt="weather-icon" className="h-14 w-16"/>
                     <div className="w-full flex items-start gap-1">
                         <span className="poppins-bold scroll-m-20 text-6xl font-extrabold tracking-tight">
                             20
