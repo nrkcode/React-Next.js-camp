@@ -1,3 +1,5 @@
+import { Input, SearchBar } from "@/components";
+
 function HomePage() {
     return (
         <div className="page">
@@ -9,10 +11,15 @@ function HomePage() {
                             {/* 아이콘 */}
                             <img src="" alt="" className="h-10"></img>
                             {/* 폰트 로고 */}
-                            <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight"></h3>
+                            <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
+                                Weather.io
+                            </h3>
                         </div>
                         {/*검색창 영역 */}
-                        <div></div>
+                        <SearchBar placeholder="검색할 지역 이름을 영어로 입력하세요" className="flex-1"></SearchBar>
+                        <div>
+                            <Input/>
+                        </div>
                     </div>
                 </header>
             </div>
