@@ -2,6 +2,9 @@
 //헤더파일
 export { Header } from "./common/header/Header";
 
+/**Home 컴포넌트 */
+export { GetTodayWidget } from "./home/GetTodayWidget";
+
 /**UI기초 컴포넌트 */
 export { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
 export { Button, buttonVariants } from "./ui/button";
