@@ -1,5 +1,7 @@
 /**공통 컴포넌트 */
 //헤더파일
+export { Header } from "./common/header/Header";
+
 /**UI기초 컴포넌트 */
 export { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
 export { Button, buttonVariants } from "./ui/button";
