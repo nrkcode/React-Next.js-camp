@@ -2,12 +2,12 @@ import { SearchBar } from "@/components";
 
 function Header() {
     return (
-        <header className="w-full h-20 flex item-center p-6 gap-6">
+        <header className="w-full h-20 flex item-center p-6 gap-6 bg-slate-200">
             <div className="w-1/2 flex items-center justify-start gap-6">
                 {/*로고 영역 */}
                 <div className="h-full flex items-center justify-center gap-2">
                     {/* 아이콘 */}
-                    <img src="/" alt="logo" className="h-10"></img>
+                    <img src="src/assets/icons/logo.svg" alt="logo" className="h-10"></img>
                     {/* 폰트 로고 */}
                     <h3 className="poppins-bold scroll-m-20 text-2xl font-semibold tracking-tight">
                         Weather.io
