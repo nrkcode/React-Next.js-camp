@@ -114,7 +114,7 @@ function GetTodayHighlightsWidget() {
                         labelEn={"Feels Like"}
                         imgUrl={"src/assets/icons/Hot.svg"}
                         value={19}
-                        unit={"&#8451;"}
+                        unit="&#8451;"
                     />
                 </div>
             </CardContent>
