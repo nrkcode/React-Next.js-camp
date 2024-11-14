@@ -70,12 +70,12 @@ function GetTodayHighlightsWidget( {currentData, tideData}: Props) {
                             <GetSunriseAndSunset
                                 imgUrl={"src/assets/icons/1000d.svg"}
                                 label={"Sunrise"}
-                                time={"07:00 AM"}
+                                time={tideData.astro.sunrise}
                             />
                             <GetSunriseAndSunset
                                 imgUrl={"src/assets/icons/1000n.svg"}
                                 label={"Sunset"}
-                                time={"05:34 PM"}
+                                time={tideData.astro.sunset}
                             />
                         </CardContent>
                     </Card>
@@ -85,28 +85,28 @@ function GetTodayHighlightsWidget( {currentData, tideData}: Props) {
                         labelKo={"습도"}
                         labelEn={"Humidity"}
                         imgUrl={"src/assets/icons/Humidity.svg"}
-                        value={80}
+                        value={currentData.current.humidity}
                         unit={"%"}
                     />
                     <GetWavesWidget
                         labelKo={"기압"}
                         labelEn={"Pressure"}
                         imgUrl={"src/assets/icons/Wind.svg"}
-                        value={1024}
+                        value={currentData.current.pressure_mb}
                         unit={"hPa"}
                     />
                     <GetWavesWidget
                         labelKo={"가시거리"}
                         labelEn={"Visibility"}
                         imgUrl={"src/assets/icons/Fog.svg"}
-                        value={10}
+                        value={currentData.current.vis_km}
                         unit={"km"}
                     />
                     <GetWavesWidget
                         labelKo={"체감온도"}
                         labelEn={"Feels Like"}
                         imgUrl={"src/assets/icons/Hot.svg"}
-                        value={19}
+                        value={currentData.current.feelslike_c}
                         unit="&#8451;"
                     />
                 </div>
