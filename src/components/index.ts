@@ -20,3 +20,4 @@ export { GetSunriseAndSunset } from "./home/GetSunriseAndSunset";
 export { GetWavesWidget } from "./home/GetWavesWidget";
 export { GetTodayHighlightsWidget } from "./home/GetTodayHighlightsWidget";
 export { GetDayItem } from "./home/GetDayItem";
+export { HourlyCard } from "./home/HourlyCard";
