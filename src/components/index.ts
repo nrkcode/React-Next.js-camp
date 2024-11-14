@@ -21,3 +21,4 @@ export { GetWavesWidget } from "./home/GetWavesWidget";
 export { GetTodayHighlightsWidget } from "./home/GetTodayHighlightsWidget";
 export { GetDayItem } from "./home/GetDayItem";
 export { HourlyCard } from "./home/HourlyCard";
+export { GetWeekWidget } from "./home/GetWeekWidget";

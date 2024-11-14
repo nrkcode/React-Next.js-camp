@@ -1,9 +1,7 @@
 import axios from "axios";
-import {Header,GetTodayWidget,GetHourlyWidget, GetKakaoMapWidget, GetTodayHighlightsWidget,
-    GetDayItem, Card, CardHeader, CardTitle, CardDescription, CardContent,
-} from "@/components";
+import {Header,GetTodayWidget,GetHourlyWidget, GetKakaoMapWidget, GetTodayHighlightsWidget, GetWeekWidget} from "@/components";
 import { useEffect, useState } from "react";
-import { ForecastTideDay, Weather } from "@/types";
+import { ForecastDay, ForecastTideDay, Weather } from "@/types";
 
 const defaultWeatherData: Weather = {
     current: {
@@ -96,6 +94,7 @@ const defaultTideData: ForecastTideDay = {
 function HomePage() {
     const [weatherData,setWeatherData] = useState(defaultWeatherData);
     const [tideData, setTideData] = useState<ForecastTideDay>(defaultTideData);
+    const[oneWeekWeatherSummary, setOneWeekWeatherSummary] = useState([]);
 
     const APP_KEY = "062c03d2ffce4e18b4771016241411";
     const BASE_URL = "http://api.weatherapi.com/v1";
@@ -142,10 +141,38 @@ function HomePage() {
 
     };
     
+    const getOneWeekWeather = async ()=>{
+        
+        try{
+            /** Promise 인스턴스 방법을 사용했을 땐, resolve에 해당 */  
+            const res = await axios.get(`${BASE_URL}/forecast.json?q=seoul&days=7&key=${APP_KEY}`) ;
+            console.log(res);
+
+            if (res.status === 200 && res.data ){
+                const newData=res.data.forecast.forecastday.map((item: ForecastDay)=>
+                {
+                    return{
+                        maxTemp: Math.round(item.day.maxtemp_c),
+                        minTemp: Math.round(item.day.mintemp_c),
+                        date: item.date_epoch,
+                        iconCode: item.day.condition.code,
+                        isDay: item.day.condition.icon.includes("day"),
+                    };
+            });
+            setOneWeekWeatherSummary(newData);
+        }
+        } catch(error){
+            /** Promise 인스턴스 방법을 사용했을 땐, resolve에 해당 */  
+            console.error(error);
+        }
+
+    };
+    
 
     useEffect(()=>{
         fetchApi();
         fetchTideApi();
+        getOneWeekWeather();
     }, [])
 
     return (
@@ -162,22 +189,7 @@ function HomePage() {
                     {/* 하단 2개의 위젯 */}
                     <div className="w-full flex items-center gap-5">
                         <GetTodayHighlightsWidget currentData={weatherData} tideData={tideData} />
-                        <Card className="w-1/4 h-full">
-                            <CardHeader>
-                                <CardTitle>7 Days</CardTitle>
-                                <CardDescription>이번주 날씨를 조회하고 있습니다.</CardDescription>
-                            </CardHeader>
-                            <CardContent className="flex flex-col gap-1">
-                                <GetDayItem highTemp={20} lowTemp={10} />
-                                <GetDayItem highTemp={20} lowTemp={10} />
-                                <GetDayItem highTemp={20} lowTemp={10} />
-                                <GetDayItem highTemp={20} lowTemp={10} />
-                                <GetDayItem highTemp={20} lowTemp={10} />
-                                <GetDayItem highTemp={20} lowTemp={10} />
-                                <GetDayItem highTemp={20} lowTemp={10} />
-                                <GetDayItem highTemp={20} lowTemp={10} />
-                            </CardContent>
-                        </Card>
+                        <GetWeekWidget data={oneWeekWeatherSummary} />
                     </div>
                 </div>
             </div>
