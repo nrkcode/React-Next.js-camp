@@ -1,3 +1,4 @@
+import axios from "axios";
 import {
     Header,
     GetTodayWidget,
@@ -12,7 +13,27 @@ import {
     CardContent,
 } from "@/components";
 
+
 function HomePage() {
+    const fetchApi= async (localName: string)=>{
+        const APP_KEY = "cdc7457485e04f1687404802241411";
+        const BASE_URL = "http://api.weatherapi.com/v1";
+        
+        try{
+            /** Promise 인스턴스 방법을 사용했을 땐, resolve에 해당 */  
+            const res = await axios.get(`${BASE_URL}/current.json?q=seoul&key=${APP_KEY}`) ;
+            console.log(res);
+        } catch(error){
+            /** Promise 인스턴스 방법을 사용했을 땐, resolve에 해당 */  
+            console.error(error);
+        }finally{
+            /* 비동기 로직이 실행되던. 안되던 무조건 실행되어야 하는 로직이 작성된다. */
+            console.log("fetchApi 호출은 되었습니다.");
+        }
+
+    };
+    fetchApi();
+
     return (
         <div className="page">
             <div className="page__container">
@@ -33,6 +54,13 @@ function HomePage() {
                                 <CardDescription>이번주 날씨를 조회하고 있습니다.</CardDescription>
                             </CardHeader>
                             <CardContent className="flex flex-col gap-1">
+                                <GetDayItem highTemp={20} lowTemp={10} />
+                                <GetDayItem highTemp={20} lowTemp={10} />
+                                <GetDayItem highTemp={20} lowTemp={10} />
+                                <GetDayItem highTemp={20} lowTemp={10} />
+                                <GetDayItem highTemp={20} lowTemp={10} />
+                                <GetDayItem highTemp={20} lowTemp={10} />
+                                <GetDayItem highTemp={20} lowTemp={10} />
                                 <GetDayItem highTemp={20} lowTemp={10} />
                             </CardContent>
                         </Card>
