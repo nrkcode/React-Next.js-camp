@@ -17,3 +17,6 @@
 -- https://github.com/nrkcode/React-Next.js-camp/commit/09a593cf33c824dd9fb14e458c520f86c8dd0657
 -- {}안에 넣어서 prop 보내니까 문자열로 출력돼서 괄호를 벗겼더니 제대로 출력되었다
 ![image](https://github.com/user-attachments/assets/7fb5c5a6-8e03-44be-8fcb-4c235098a7b2)
+
+11.14.
+![image](https://github.com/user-attachments/assets/9beb7592-3add-4262-8d62-051c79ec2f99)
