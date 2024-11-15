@@ -1,7 +1,7 @@
 import axios from "axios";
-import {Header,GetTodayWidget,GetHourlyWidget, GetKakaoMapWidget, GetTodayHighlightsWidget, GetWeekWidget} from "@/components";
 import { useEffect, useState } from "react";
 import { ForecastDay, ForecastTideDay, Weather } from "@/types";
+import {Header,GetTodayWidget,GetHourlyWidget, GetKakaoMapWidget, GetTodayHighlightsWidget, GetWeekWidget} from "@/components";
 
 const defaultWeatherData: Weather = {
     current: {
@@ -136,7 +136,7 @@ function HomePage() {
             console.error(error);
         }finally{
             /* 비동기 로직이 실행되던. 안되던 무조건 실행되어야 하는 로직이 작성된다. */
-            console.log("fetchApi 호출은 되었습니다.");
+            console.log("fetchTideApi 호출은 되었습니다.");
         }
 
     };

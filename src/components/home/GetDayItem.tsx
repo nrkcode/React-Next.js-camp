@@ -10,7 +10,6 @@ interface Props {
     data: WeatherInfo;
 }
 
-
 function GetDayItem({data}: Props){
     return(
         <div className="w-full flex items-center gap-7 bg-neutral-50 py-0 px-3 rounded-sm">

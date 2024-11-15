@@ -1,5 +1,5 @@
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, GetSunriseAndSunset, GetWavesWidget } from "@/components";
 import { ForecastTideDay, Tide, Weather } from "@/types";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, GetSunriseAndSunset, GetWavesWidget } from "@/components";
 
 interface Props {
     currentData: Weather;

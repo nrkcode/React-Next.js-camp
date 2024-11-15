@@ -1,13 +1,6 @@
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-    Separator,
-} from "@/components";
 import { Weather } from "@/types";
 import { CalendarDays, MapPinned } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, Separator} from "@/components";
 
 interface Props {
     data: Weather;

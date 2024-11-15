@@ -9,11 +9,11 @@ interface WeatherInfo {
     isDay: boolean;
 }
 
-interface Props {
+interface Prillops {
     data: WeatherInfo[];
 }
 
-function GetWeekWidget( {data} : Props) {
+function GetWeekWidget( {data} : Prillops) {
     return(
         <Card className="w-1/4 h-full">
                             <CardHeader>

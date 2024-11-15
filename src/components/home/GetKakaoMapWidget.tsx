@@ -1,5 +1,5 @@
-import { Map, MapMarker } from "react-kakao-maps-sdk";
 import useKakaoLoader from "@/hooks/useKakaoLoader";
+import { Map, MapMarker } from "react-kakao-maps-sdk";
 import { Card } from "@/components";
 
 function GetKakaoMapWidget() {
