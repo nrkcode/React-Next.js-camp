@@ -1,7 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { ForecastDay, ForecastTideDay, Weather } from "@/types";
-import {Header,GetTodayWidget,GetHourlyWidget, GetKakaoMapWidget, GetTodayHighlightsWidget, GetWeekWidget} from "@/components";
+import { Header,GetTodayWidget,GetHourlyWidget, GetKakaoMapWidget, GetTodayHighlightsWidget, GetWeekWidget} from "@/components";
+import { cityNameAtom } from "@/stores";
+import { useAtom } from "jotai";
 
 const defaultWeatherData: Weather = {
     current: {
@@ -92,9 +94,12 @@ const defaultTideData: ForecastTideDay = {
 };
 
 function HomePage() {
+    const [cityName, setCityName] = useAtom(cityNameAtom);
+
+
     const [weatherData,setWeatherData] = useState(defaultWeatherData);
     const [tideData, setTideData] = useState<ForecastTideDay>(defaultTideData);
-    const[oneWeekWeatherSummary, setOneWeekWeatherSummary] = useState([]);
+    const [oneWeekWeatherSummary, setOneWeekWeatherSummary] = useState([]);
 
     const APP_KEY = "062c03d2ffce4e18b4771016241411";
     const BASE_URL = "http://api.weatherapi.com/v1";
@@ -103,7 +108,7 @@ function HomePage() {
         
         try{
             /** Promise 인스턴스 방법을 사용했을 땐, resolve에 해당 */  
-            const res = await axios.get(`${BASE_URL}/forecast.json?q=seoul&days=7&key=${APP_KEY}`) ;
+            const res = await axios.get(`${BASE_URL}/forecast.json?q=${cityName}&days=7&key=${APP_KEY}`) ;
             console.log(res);
 
             if (res.status === 200){
@@ -124,7 +129,7 @@ function HomePage() {
         
         try{
             /** Promise 인스턴스 방법을 사용했을 땐, resolve에 해당 */  
-            const res = await axios.get(`${BASE_URL}/marine.json?q=seoul&days=7&key=${APP_KEY}`) ;
+            const res = await axios.get(`${BASE_URL}/marine.json?q=${cityName}&days=7&key=${APP_KEY}`) ;
             console.log(res);
 
             if (res.status === 200){
@@ -145,7 +150,7 @@ function HomePage() {
         
         try{
             /** Promise 인스턴스 방법을 사용했을 땐, resolve에 해당 */  
-            const res = await axios.get(`${BASE_URL}/forecast.json?q=seoul&days=7&key=${APP_KEY}`) ;
+            const res = await axios.get(`${BASE_URL}/forecast.json?q=${cityName}&days=7&key=${APP_KEY}`) ;
             console.log(res);
 
             if (res.status === 200 && res.data ){
@@ -173,7 +178,7 @@ function HomePage() {
         fetchApi();
         fetchTideApi();
         getOneWeekWeather();
-    }, [])
+    }, [cityName])
 
     return (
         <div className="page">
